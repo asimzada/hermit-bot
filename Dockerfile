@@ -1,6 +1,11 @@
 FROM quay.io/hermit/hermit-ser:latest
 
-RUN git clone https://github.com/A-d-i-t-h-y-a-n/hermit-bot /root/hermit-md
+# Clone your forked repository
+RUN git clone https://github.com/asimzada/hermit-bot /root/hermit-md
 WORKDIR /root/hermit-md/
+
+# Install dependencies
 RUN yarn install --network-concurrency 1
+
+# Start the application
 CMD ["node", "index.js"]
